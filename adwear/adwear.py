@@ -23,7 +23,7 @@ def popup():
     while True:
         time.sleep(random.randrange(10, 15))
         os.system("tmux new-window -k -t ADWEAR:1 -n POPUP")
-        os.system("tmux send-keys '.{}' C-m -t ADWEAR:1".format(popup_controller_path))
+        os.system("tmux send-keys '{}' C-m -t ADWEAR:1".format(popup_controller_path))
         time.sleep(random.randrange(8, 10))
         os.system("tmux kill-window -t ADWEAR:1")
 
@@ -32,7 +32,7 @@ os.system("tmux new-session -d -s ADWEAR")
 os.system("tmux split-window -h -t ADWEAR:0")
 os.system("tmux send-keys '.{}' C-m -t ADWEAR:0.1".format(sidebar_controller_path))
 os.system("tmux select-pane -t ADWEAR:0.0")
-os.system("tmux set-option sdtatus off") # turn off the bottom status bar
+os.system("tmux set-option status off") # turn off the bottom status bar
 os.system("tmux set-option prefix 'C-@'") # change the prefix to a more obscure one
 os.system("tmux set-option pane-border-fg white")
 os.system("tmux set-option pane-active-border-fg white")
